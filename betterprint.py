@@ -65,8 +65,7 @@ class MyPrettyPrinter(orig_pprint.PrettyPrinter):
                 write('\n')
                 write((indent * level) * ' ')
                 context[objid] = 1
-                items  = object.items()
-                items.sort()
+                items = sorted(object.items())
                 key, ent = items[0]
                 rep = self._repr(key, context, level)
                 write(self._colours['key'])
